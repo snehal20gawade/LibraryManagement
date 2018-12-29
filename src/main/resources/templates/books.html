@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Available Books in Library</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Books </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th> Title </th>
+                    <th> Author </th>
+                    <th> Id </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${books.empty}">
+                    <td colspan="2"> No Books Available </td>
+                </tr>
+
+                <tr th:each="book : ${books}">
+                    <td><span th:text="${book.name}"> Title </span></td>
+                    <td><span th:text="${book.author}"> Author </span></td>
+                    <td><span th:text="${book.id}"> Id </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="#" th:href="@{/add}"> Add Books </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

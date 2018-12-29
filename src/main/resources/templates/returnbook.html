@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Return Book To Library</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h3>Return Book</h3>
+<form action="#" th:action="@{/returnBookToLibrary}" th:object="${bookStudent}"
+      method="post">
+    <table>
+        <tr>
+            <td><input type="text" th:field="*{bookId}" placeholder="Book ID"
+                       class="form-control"/>
+            </select></td>
+            <td><input type="text" th:field="*{studentId}" placeholder="Student ID"
+                       class="form-control"/>
+            </select></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+            <h2><span class="text-success" th:utext="${validationMessage}"></span></h2>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
