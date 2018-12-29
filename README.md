@@ -1,2 +1,7 @@
 # LibraryManagement
-This repository contains Library Management Application with Spring MVC.
+Register Book,Register Student,Issue book,Return book functionality
+
+# Technology Used
+ Java 8,
+ Spring mvc/Theamleaf
+ Junit.
